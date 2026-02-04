@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoamLab 土窟設計 | Space Design</title>
+    <meta name="description" content="捕捉原始條件，孕育空間呼吸。LoamLab 土窟設計。">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/core.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/portfolio.css"> <!-- Will create next -->
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <div class="logo-text">
+                LOAMLAB
+            </div>
+            <div class="nav-links">
+                <a href="#works">WORKS</a>
+                <a href="#story">STORY</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-bg-pulse"></div>
+        <div class="hero-triangle"></div>
+
+        <div class="hero-content">
+            <!-- Logo if needed, but we use the triangle as the main visual -->
+            <h1 class="hero-headline">條件 &rarr; 呼吸</h1>
+            <p class="hero-sub">捕捉原始條件，孕育空間呼吸</p>
+
+            <div class="hero-ctas">
+                <a href="#works" class="btn-primary">看作品集 VIEW WORKS</a>
+                <a href="#contact" class="btn-secondary">立即洽詢 CONTACT</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- WORKS (Placeholder Structure) -->
+    <section id="works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Selected Projects</span>
+                <h2 class="section-title">捕捉的瞬間</h2>
+            </div>
+            <!-- Grid container will be injected via JS or CSS later -->
+            <div class="portfolio-grid" id="portfolio-grid-container">
+                <!-- Items to be added -->
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <span class="section-label"
+                    style="justify-content: center; display: flex; margin-bottom: 40px;">Philosophy</span>
+                <h2 style="font-size: 40px; line-height: 1.6; font-weight: 300; margin-bottom: 60px;">
+                    從壤土到呼吸
+                </h2>
+                <p style="font-size: 20px; line-height: 2; color: #ccc; margin-bottom: 40px;">
+                    我們是慶文與葳。LoamLab 把每一個場域最原始、最粗糙的條件捕捉起來，像野人一樣翻轉它們，然後用 AI 與設計邏輯孕育出會呼吸、有記憶的空間視覺。
+                </p>
+                <p style="font-size: 20px; line-height: 2; color: #ccc;">
+                    那抹紅色，就是尚未成形的可能性。<br>
+                    我們不只是出圖，我們讓空間自己說話。
+                </p>
+                <div style="margin-top: 60px; color: var(--accent-color); font-size: 30px;">
+                    &Delta;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT + CONTACT -->
+    <section id="contact" style="background: #0a0a0a;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; padding-left: 0;">
+                <span class="section-label">Get in Touch</span>
+                <h2 class="section-title">開始對話</h2>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 60px; justify-content: center;">
+                <!-- Bio Form -->
+                <div style="flex: 1; min-width: 300px; max-width: 400px;">
+                    <h3 style="margin-bottom: 20px; font-size: 24px;">The Team</h3>
+                    <div style="margin-bottom: 30px;">
+                        <strong style="color: #fff; display: block; margin-bottom: 5px;">Qing Wen</strong>
+                        <p style="color: #888;">Co-Founder / Space Strategist</p>
+                    </div>
+                    <div>
+                        <strong style="color: #fff; display: block; margin-bottom: 5px;">Wiwi</strong>
+                        <p style="color: #888;">Co-Founder / Visual Artist</p>
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <p style="color: #666; font-size: 14px;">IG: @loamlab_barbarian</p>
+                        <p style="color: #666; font-size: 14px;">Location: Taoyuan, Taiwan</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form" style="flex: 1; min-width: 300px; max-width: 500px;">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="姓名 Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="專案類型 Project Type">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input" rows="5" placeholder="訊息 Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary"
+                        style="width: 100%; margin-top: 20px; background: var(--accent-color); Border-color: var(--accent-color); color: #fff;">
+                        發送訊息 SUBMIT
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container"
+            style="text-align: center; padding: 40px 0; color: #444; font-size: 12px; border-top: 1px solid #111;">
+            &copy; 2026 LoamLab Space Design. All reserved.
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <!-- Modal Container -->
+    <div id="modal-overlay" class="modal-overlay">
+        <!-- Dynamic Content -->
+    </div>
+</body>
+
+</html>
