@@ -154,4 +154,79 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 5. SURPRISE EASTER EGG (Founders' Personality)
+    const initSurprise = () => {
+        const triangle = document.querySelector('.hero-triangle');
+        const heroSub = document.querySelector('.hero-sub');
+        const originalText = heroSub.innerText;
+        let isAnimating = false;
+
+        if (!triangle) return;
+
+        triangle.addEventListener('click', (e) => {
+            // Ripple / Particle Effect
+            const rect = triangle.getBoundingClientRect();
+            // Center of triangle roughly
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Create Spores
+            for (let i = 0; i < 30; i++) {
+                const spore = document.createElement('div');
+                spore.classList.add('spore');
+                document.body.appendChild(spore);
+
+                // Start position
+                spore.style.left = `${centerX}px`;
+                spore.style.top = `${centerY}px`;
+
+                // Random Direction
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = 100 + Math.random() * 200; // Distance
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+
+                spore.style.setProperty('--tx', `${tx}px`);
+                spore.style.setProperty('--ty', `${ty}px`);
+
+                // Random Color (Red or White)
+                spore.style.background = Math.random() > 0.7 ? '#fff' : '#ff0000';
+
+                // Animation
+                spore.style.animation = `fly-out 0.8s ease-out forwards`;
+
+                // Cleanup
+                setTimeout(() => spore.remove(), 800);
+            }
+
+            // Text Surprise
+            if (!isAnimating) {
+                isAnimating = true;
+                heroSub.style.opacity = 0;
+
+                setTimeout(() => {
+                    heroSub.innerText = "EXPECT THE UNEXPECTED"; // 創辦人個性語錄
+                    heroSub.style.color = "#ff0000";
+                    heroSub.style.letterSpacing = "6px";
+                    heroSub.style.fontWeight = "700";
+                    heroSub.style.opacity = 1;
+                }, 200);
+
+                setTimeout(() => {
+                    heroSub.style.opacity = 0;
+                    setTimeout(() => {
+                        heroSub.innerText = originalText;
+                        heroSub.style.color = "rgba(255, 255, 255, 0.8)";
+                        heroSub.style.letterSpacing = "4px";
+                        heroSub.style.fontWeight = "300";
+                        heroSub.style.opacity = 1;
+                        isAnimating = false;
+                    }, 200);
+                }, 2500);
+            }
+        });
+    };
+
+    initSurprise();
+
 });

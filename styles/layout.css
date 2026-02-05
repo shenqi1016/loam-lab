@@ -108,7 +108,39 @@
     border-bottom: 173px solid #ff0000;
     filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.6));
     animation: ember-breathe 6s ease-in-out infinite alternate;
-    z-index: 1;
+    z-index: 100;
+    /* Ensure it's clickable (above low-z elements) but below text if needed. Actually let's make it clickable. */
+    cursor: pointer;
+    /* A subtle hint */
+    transition: transform 0.1s;
+}
+
+.hero-triangle:active {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* SURPRISE PARTICLES (Spores) */
+.spore {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+}
+
+@keyframes fly-out {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+    }
 }
 
 .hero-content {
