@@ -508,68 +508,56 @@ section {
     text-align: left;
 }
 
-.ai-grid {
+/* --- AI TOOL WALL --- */
+.tool-wall {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.ai-card {
-    background: #050505;
-    border: 1px solid #222;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.ai-card:hover {
-    border-color: #555;
-    transform: translateY(-5px);
-}
-
-.ai-img-placeholder {
-    height: 180px;
-    background-size: cover;
-    background-position: center;
+.tool-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    /* Small radius for functional look */
+    padding: 20px;
+    text-align: center;
+    transition: all 0.2s var(--ease-out);
+    cursor: default;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #222;
+    overflow: hidden;
 }
 
-.ai-card-overlay {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    padding: 5px 15px;
-    border-radius: 20px;
+.tool-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+.tool-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.tool-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.tool-sub {
     font-size: 12px;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #666;
+    letter-spacing: 0.5px;
 }
 
-.ai-title {
-    font-size: 16px;
-    color: #fff;
-    margin: 20px 20px 10px;
-}
-
-.ai-desc {
-    font-size: 13px;
-    color: #888;
-    margin: 0 20px 20px;
-    line-height: 1.5;
-}
-
-@media (max-width: 1024px) {
-    .ai-grid {
+@media (max-width: 768px) {
+    .tool-wall {
         grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .ai-grid {
-        grid-template-columns: 1fr;
     }
 }
 
