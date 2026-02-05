@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         triangle.addEventListener('click', (e) => {
             // Ripple / Particle Effect
             const rect = triangle.getBoundingClientRect();
+            // Center of triangle (getBoundingClientRect is viewport relative, which works for fixed spores)
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
 
