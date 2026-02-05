@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const initSurprise = () => {
         const triangle = document.querySelector('.hero-triangle');
         const heroSub = document.querySelector('.hero-sub');
+        if (!heroSub) return; // Guard clause
         const originalText = heroSub.innerText;
         let isAnimating = false;
 
@@ -166,52 +167,38 @@ document.addEventListener('DOMContentLoaded', () => {
         triangle.addEventListener('click', (e) => {
             // Ripple / Particle Effect
             const rect = triangle.getBoundingClientRect();
-            // Center of triangle roughly
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
 
-            // Create Spores
             for (let i = 0; i < 30; i++) {
                 const spore = document.createElement('div');
                 spore.classList.add('spore');
                 document.body.appendChild(spore);
-
-                // Start position
                 spore.style.left = `${centerX}px`;
                 spore.style.top = `${centerY}px`;
 
-                // Random Direction
                 const angle = Math.random() * Math.PI * 2;
-                const velocity = 100 + Math.random() * 200; // Distance
+                const velocity = 100 + Math.random() * 200;
                 const tx = Math.cos(angle) * velocity;
                 const ty = Math.sin(angle) * velocity;
 
                 spore.style.setProperty('--tx', `${tx}px`);
                 spore.style.setProperty('--ty', `${ty}px`);
-
-                // Random Color (Red or White)
                 spore.style.background = Math.random() > 0.7 ? '#fff' : '#ff0000';
-
-                // Animation
                 spore.style.animation = `fly-out 0.8s ease-out forwards`;
-
-                // Cleanup
                 setTimeout(() => spore.remove(), 800);
             }
 
-            // Text Surprise
             if (!isAnimating) {
                 isAnimating = true;
                 heroSub.style.opacity = 0;
-
                 setTimeout(() => {
-                    heroSub.innerText = "EXPECT THE UNEXPECTED"; // 創辦人個性語錄
+                    heroSub.innerText = "EXPECT THE UNEXPECTED";
                     heroSub.style.color = "#ff0000";
                     heroSub.style.letterSpacing = "6px";
                     heroSub.style.fontWeight = "700";
                     heroSub.style.opacity = 1;
                 }, 200);
-
                 setTimeout(() => {
                     heroSub.style.opacity = 0;
                     setTimeout(() => {
@@ -227,6 +214,80 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // 6. GLOBAL SURPRISE: SCRAMBLE TEXT (Matrix Decoding Effect)
+    const initScrambleEffect = () => {
+        const targets = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-links a, .pricing-btn');
+        const chars = '!<>-_\\/[]{}—=+*^?#________';
+
+        targets.forEach(el => {
+            el.dataset.originalText = el.innerText;
+
+            el.addEventListener('mouseenter', () => {
+                let iteration = 0;
+                const originalText = el.dataset.originalText;
+
+                // Clear any running interval
+                if (el.interval) clearInterval(el.interval);
+
+                el.interval = setInterval(() => {
+                    el.innerText = originalText
+                        .split('')
+                        .map((letter, index) => {
+                            if (index < iteration) {
+                                return originalText[index];
+                            }
+                            return chars[Math.floor(Math.random() * chars.length)];
+                        })
+                        .join('');
+
+                    if (iteration >= originalText.length) {
+                        clearInterval(el.interval);
+                    }
+
+                    iteration += 1 / 2; // Speed of decoding
+                }, 30);
+            });
+
+            el.addEventListener('mouseleave', () => {
+                if (el.interval) clearInterval(el.interval);
+                el.innerText = el.dataset.originalText;
+            });
+        });
+    };
+
+    // 7. GLOBAL SURPRISE: WARP NAV (The "Jump")
+    const initWarpNav = () => {
+        const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                if (!targetSection) return;
+
+                // 1. Trigger Warp
+                document.body.classList.add('body-warp');
+
+                // 2. Play Sound? (Optional, maybe too intrusive)
+
+                // 3. Wait for visual distort, then jump
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'auto' }); // Instant jump while distorted
+
+                    // 4. Recovery
+                    setTimeout(() => {
+                        document.body.classList.remove('body-warp');
+                    }, 100);
+                }, 300); // 300ms distortion time
+            });
+        });
+    };
+
+    // Initialize all surprises
     initSurprise();
+    initScrambleEffect();
+    initWarpNav();
 
 });
