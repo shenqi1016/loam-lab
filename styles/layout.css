@@ -101,12 +101,17 @@
     position: relative;
     width: 200px;
     height: 120px;
-    margin-bottom: 40px;
-    transform: scale(1.5);
+    margin-bottom: 120px;
+    /* Increased to prevent overlap */
+    transform: scale(1.6);
     z-index: 5;
     opacity: 0;
     animation: fade-in 2s ease-out forwards 0.5s;
+    margin-top: -40px;
+    /* Slight optical adjustment */
 }
+
+/* ... existing mountain styles ... */
 
 /* The White Lines (Mountains / Flipped W) */
 .logo-mountain-left,
@@ -171,7 +176,6 @@
     z-index: 10;
     cursor: pointer;
     transition: transform 0.1s;
-    /* Rise from bottom logic handled by 'rise-up' keyframe or initial state */
 }
 
 .hero-triangle:active {
@@ -190,12 +194,15 @@
     }
 }
 
-/* IMPLOSION NAV */
+/* IMPLOSION NAV CSS */
 body.body-suck-in {
-    transform: scale(0.02);
-    filter: brightness(3) blur(10px);
+    transform: scale(0);
+    /* Absolute zero */
     border-radius: 50%;
-    overflow: hidden;
+    /* Perfect Circle */
+    filter: blur(20px) grayscale(1);
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* TEXT STYLES */
@@ -209,7 +216,11 @@ body.body-suck-in {
     transform: translateY(30px);
     animation: slide-up-fade 1.2s var(--ease-out) forwards 0.5s;
     color: #fff;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    /* Better readability */
 }
+
+/* Remove old conflicting defs if overlap */
 
 .hero-headline .arrow {
     font-family: monospace;
