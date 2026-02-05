@@ -101,10 +101,11 @@
     position: relative;
     width: 200px;
     height: 120px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     transform: scale(1.5);
-    /* Make it prominent */
     z-index: 5;
+    opacity: 0;
+    animation: fade-in 2s ease-out forwards 0.5s;
 }
 
 /* The White Lines (Mountains / Flipped W) */
@@ -117,17 +118,15 @@
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 100px solid #fff;
-    /* White base */
     z-index: 2;
 }
 
-/* Create hollow effect with pseudo-elements masking the inner part */
+/* Hollow effect with pseudo-elements */
 .logo-mountain-left::after,
 .logo-mountain-right::after {
     content: '';
     position: absolute;
     top: 6px;
-    /* Border thickness */
     left: -44px;
     width: 0;
     height: 0;
@@ -143,14 +142,8 @@
 
 .logo-mountain-right {
     left: 60px;
-    /* Overlap */
     z-index: 3;
-    mix-blend-mode: normal;
 }
-
-/* Ensure right mountain mask doesn't hide left mountain? 
-   Actually, simply stacking them is fine for the "W" look.
-*/
 
 .logo-base-line {
     position: absolute;
@@ -174,14 +167,35 @@
     border-right: 25px solid transparent;
     border-bottom: 45px solid #ff0000;
     filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8));
-    animation: ember-breathe 4s ease-in-out infinite alternate;
+    animation: ember-breathe 4s ease-in-out infinite alternate, rise-up 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     z-index: 10;
     cursor: pointer;
     transition: transform 0.1s;
+    /* Rise from bottom logic handled by 'rise-up' keyframe or initial state */
 }
 
 .hero-triangle:active {
     transform: translateX(-50%) scale(0.9);
+}
+
+@keyframes rise-up {
+    from {
+        transform: translateX(-50%) translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* IMPLOSION NAV */
+body.body-suck-in {
+    transform: scale(0.02);
+    filter: brightness(3) blur(10px);
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 /* TEXT STYLES */
