@@ -68,5 +68,29 @@ const portfolioData = [
             process: { text: "孕育過程：將牆面內縮，創造出一條讓人願意停留的'縫隙'。", img: "https://placehold.co/800x600/1a1a1a/444?text=Gap+Design" },
             final: { text: "呼吸瞬間：行人駐足，不再只是匆匆路過。", img: "https://placehold.co/800x600/1a1a1a/fff?text=Urban+Pause" }
         }
+    },
+    {
+        id: "project-05",
+        title: "植光寓所",
+        category: "Residential / Hsinchu",
+        image: "https://placehold.co/800x600/0a0a0a/fff?text=Plant+House",
+        desc: "讓植物成為房子的主人，人只是借住的客。",
+        stages: {
+            raw: { text: "捕捉條件：被鐵窗封死的舊公寓陽台。", img: "https://placehold.co/800x600/1a1a1a/444?text=Cage+Balcony" },
+            process: { text: "孕育過程：退縮室內界線，將陽台擴大為溫室。", img: "https://placehold.co/800x600/1a1a1a/444?text=Greenhouse+Plan" },
+            final: { text: "呼吸瞬間：風穿過樹葉的聲音，是最好的白噪音。", img: "https://placehold.co/800x600/1a1a1a/fff?text=Living+with+Green" }
+        }
+    },
+    {
+        id: "project-06",
+        title: "靜謐茶屋",
+        category: "Commercial / Yilan",
+        image: "https://placehold.co/800x600/0a0a0a/fff?text=Quiet+Tea",
+        desc: "在嘈雜的觀光夜市旁，鑿出一口安靜的井。",
+        stages: {
+            raw: { text: "捕捉條件：緊鄰夜市的透天厝，噪音與氣味干擾嚴重。", img: "https://placehold.co/800x600/1a1a1a/444?text=Noisy+Street" },
+            process: { text: "孕育過程：利用內庭院與以土牆隔絕外部，創造內向風景。", img: "https://placehold.co/800x600/1a1a1a/444?text=Inner+Court" },
+            final: { text: "呼吸瞬間：只聞茶香，不聞車聲。", img: "https://placehold.co/800x600/1a1a1a/fff?text=Tea+Silence" }
+        }
     }
 ];

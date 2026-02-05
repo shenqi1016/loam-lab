@@ -18,6 +18,8 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   /* Apple's smooth easing */
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.355, 1);
 }
 
 * {
@@ -38,8 +40,27 @@ body {
   color: var(--text-color);
   font-family: var(--font-main);
   overflow-x: hidden;
+  position: relative;
   line-height: 1.5;
   width: 100vw;
+}
+
+/* LOAM TEXTURE OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/loam_texture_dark.png');
+  background-size: 500px;
+  background-repeat: repeat;
+  opacity: 0.15;
+  /* User requested 10-20% */
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: overlay;
 }
 
 a {

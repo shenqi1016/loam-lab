@@ -107,7 +107,7 @@
     border-right: 100px solid transparent;
     border-bottom: 173px solid #ff0000;
     filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.6));
-    animation: triangle-float 6s ease-in-out infinite;
+    animation: ember-breathe 6s ease-in-out infinite alternate;
     z-index: 1;
 }
 
@@ -115,36 +115,11 @@
     position: relative;
     z-index: 2;
     text-align: center;
-    mix-blend-mode: exclusion;
-    /* Makes text interact with the glowing background */
+    mix-blend-mode: normal;
+    /* Changed for better button visibility */
 }
 
-.hero-logo-large {
-    margin-bottom: 40px;
-    width: 120px;
-    height: auto;
-}
-
-.hero-headline {
-    font-size: 120px;
-    font-weight: 800;
-    line-height: 0.9;
-    letter-spacing: -4px;
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: slide-up-fade 1.2s var(--ease-out) forwards 0.5s;
-}
-
-.hero-sub {
-    font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 4px;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 60px;
-    opacity: 0;
-    animation: slide-up-fade 1.2s var(--ease-out) forwards 0.8s;
-}
+/* ... existing code ... */
 
 .hero-ctas {
     display: flex;
@@ -156,33 +131,37 @@
 
 .btn-primary,
 .btn-secondary {
-    padding: 16px 32px;
-    border-radius: 30px;
-    font-size: 14px;
+    padding: 18px 40px;
+    /* Larger buttons */
+    border-radius: 40px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s var(--ease-out);
     text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-primary {
-    background: #fff;
-    color: #000;
-    border: 1px solid #fff;
+    background: var(--accent-color);
+    /* Red Background */
+    color: #fff;
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
 }
 
 .btn-primary:hover {
-    background: var(--accent-color);
-    border-color: var(--accent-color);
-    color: #fff;
+    background: #cc0000;
     transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
 }
 
 .btn-secondary {
     background: transparent;
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-secondary:hover {
@@ -203,15 +182,18 @@
     }
 }
 
-@keyframes triangle-float {
-
-    0%,
-    100% {
-        transform: translate(-50%, -50%) translateY(0) scale(1);
+/* New Ember Breathe Animation */
+@keyframes ember-breathe {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.4)) blur(2px);
+        opacity: 0.8;
     }
 
-    50% {
-        transform: translate(-50%, -50%) translateY(-20px) scale(1.05);
+    100% {
+        transform: translate(-50%, -50%) scale(1.05);
+        filter: drop-shadow(0 0 50px rgba(255, 0, 0, 0.9)) blur(0px);
+        opacity: 1;
     }
 }
 
@@ -299,8 +281,77 @@ section {
     line-height: 1.6;
 }
 
+/* --- SERVICES GRID --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 4px;
+    /* Minimal edge */
+    transition: all 0.4s var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.service-icon-triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 17px solid var(--accent-color);
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 5px var(--accent-color));
+    animation: ember-breathe 4s infinite alternate;
+}
+
+.service-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.service-desc {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.service-divider {
+    height: 1px;
+    width: 40px;
+    background: #333;
+    margin-bottom: 20px;
+}
+
+.service-painpoint {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.4;
+    font-style: italic;
+    border-left: 2px solid var(--accent-color);
+    padding-left: 15px;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
     .hero-headline {
         font-size: 60px;
         letter-spacing: -2px;

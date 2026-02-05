@@ -33,6 +33,26 @@
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     opacity: 0;
     transition: opacity 0.4s ease;
+    z-index: 1;
+    /* Ensure it's below the triangle but above image */
+}
+
+/* New triangle ::after pseudo-element */
+.portfolio-card::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 17px solid var(--accent-color);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s var(--ease-out);
+    z-index: 10;
+    filter: drop-shadow(0 0 10px var(--accent-color));
 }
 
 .portfolio-card:hover img {
@@ -40,8 +60,15 @@
     filter: grayscale(0%);
 }
 
-.portfolio-card:hover::after {
+.portfolio-card:hover::before {
+    /* Changed from ::after to ::before */
     opacity: 1;
+}
+
+.portfolio-card:hover::after {
+    /* New hover for triangle */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card-overlay {
