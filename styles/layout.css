@@ -139,12 +139,13 @@
 }
 
 .hero-logo-img {
-    height: 80px;
+    height: 100px;
+    /* Slightly larger for better visibility */
     width: auto;
     display: block;
-    /* Optional: blend mode if user uploaded a black bg logo */
-    /* mix-blend-mode: screen; */
-    border-radius: 4px;
+    mix-blend-mode: screen;
+    /* REMOVES BLACK BACKGROUND */
+    opacity: 0.9;
 }
 
 /* ... mountain styles (keep existing) ... */
