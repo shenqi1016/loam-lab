@@ -132,10 +132,19 @@
     position: absolute;
     top: 60px;
     left: 50%;
-    transform: translateX(-50%) scale(0.6);
+    transform: translateX(-50%);
     margin: 0;
     opacity: 0;
     animation: fade-in 1s ease-out forwards;
+}
+
+.hero-logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+    /* Optional: blend mode if user uploaded a black bg logo */
+    /* mix-blend-mode: screen; */
+    border-radius: 4px;
 }
 
 /* ... mountain styles (keep existing) ... */
