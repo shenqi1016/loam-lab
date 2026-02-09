@@ -8,7 +8,7 @@
 
 .portfolio-card {
     position: relative;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1/1;
     overflow: hidden;
     border-radius: 2px;
     cursor: pointer;
