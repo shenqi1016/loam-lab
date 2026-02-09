@@ -78,6 +78,8 @@
     align-items: center;
     overflow: hidden;
     perspective: 1000px;
+    background: #000;
+    /* Deep Black Base */
 }
 
 /* Organic Red Pulse */
@@ -85,19 +87,26 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 40vw;
-    height: 40vw;
+    width: 60vw;
+    height: 60vw;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(255, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle, rgba(200, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
     filter: blur(80px);
     animation: organic-breath 8s ease-in-out infinite alternate;
     pointer-events: none;
     z-index: 0;
 }
 
-/* The Triangle (Sharp CSS Graphic) */
-/* HERO BACKGROUND */
-.hero-bg-image {
+/* ... existing Triangle/Logo ... */
+
+/* PORTFOLIO BACKGROUND (Moved from Hero) */
+#works {
+    position: relative;
+    overflow: hidden;
+    /* Ensure parallax works */
+}
+
+.portfolio-bg-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -107,18 +116,31 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* Parallax feel */
     z-index: 0;
 }
 
-.hero-overlay {
+.portfolio-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.95) 100%);
+    background: rgba(0, 0, 0, 0.85);
+    /* Strong dark overlay so cards pop */
     z-index: 1;
+}
+
+/* Ensure Portfolio Grid is above bg */
+#works .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* HERO BACKGROUND (Legacy Clean up) */
+/* .hero-bg-image removed from Hero */
+.hero-overlay {
+    display: none;
+    /* Hide old overlay if present */
 }
 
 /* HERO LOGO COMPOSITION */
