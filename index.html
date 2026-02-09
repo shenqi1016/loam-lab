@@ -29,11 +29,12 @@
         </div>
     </nav>
 
+    <!-- 1. 起 (INTRO) -->
     <!-- HERO SECTION (First Impression) -->
     <section class="hero" id="hero">
-        <!-- 1. Full Screen Render Background -->
-        <div class="hero-bg-image"></div>
-        <div class="hero-overlay"></div>
+        <!-- 1. Minimal Black + Red Pulse -->
+        <div class="hero-bg-pulse"></div>
+        <div class="hero-bg-scan"></div>
 
         <!-- 2. SVG Animated Logo (Precision) -->
         <div class="hero-logo-composition">
@@ -81,63 +82,13 @@
                     免費試做一張渲染
                     <div class="cta-triangle"></div>
                 </a>
-                <a href="#portfolio" class="btn-secondary">看實際案例</a>
+                <a href="#works" class="btn-secondary">看實際案例</a>
             </div>
         </div>
     </section>
 
-    <!-- PROCESS SECTION (Delivery) -->
-    <section id="process">
-        <div class="container">
-            <div class="section-header" style="text-align: center; padding-left: 0;">
-                <span class="section-label">THE PROCESS</span>
-                <h2 class="section-title">從構想到交付，僅需 3-5 天</h2>
-                <p class="section-subtitle" style="margin: 20px auto;">結合 AI 的速度與人類的細膩，重新定義渲染流程。</p>
-            </div>
-
-            <div class="process-steps">
-                <!-- Step 1 -->
-                <div class="process-card">
-                    <div class="step-icon">📂</div>
-                    <div class="step-meta">STEP 01</div>
-                    <h3 class="step-title">上傳資料</h3>
-                    <p class="step-desc">提供平面圖、SketchUp 模型或參考圖。</p>
-                </div>
-                <!-- Arrow -->
-                <div class="process-arrow">→</div>
-
-                <!-- Step 2 -->
-                <div class="process-card">
-                    <div class="step-icon">⚡</div>
-                    <div class="step-meta">24 HOURS</div>
-                    <h3 class="step-title">AI 初稿</h3>
-                    <p class="step-desc">快速生成多種氛圍與構圖方案供您選擇。</p>
-                </div>
-                <!-- Arrow -->
-                <div class="process-arrow">→</div>
-
-                <!-- Step 3 -->
-                <div class="process-card active-step">
-                    <div class="step-icon">🎨</div>
-                    <div class="step-meta">HUMAN TOUCH</div>
-                    <h3 class="step-title">人工精修</h3>
-                    <p class="step-desc">資深設計師修正細節、材質與光影邏輯。</p>
-                </div>
-                <!-- Arrow -->
-                <div class="process-arrow">→</div>
-
-                <!-- Step 4 -->
-                <div class="process-card">
-                    <div class="step-icon">💎</div>
-                    <div class="step-meta">DELIVERY</div>
-                    <h3 class="step-title">交付成品</h3>
-                    <p class="step-desc">取得 4K 高解析度商業渲染大圖。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WORKS (Placeholder Structure) -->
+    <!-- 2. 承 (ELUCIDATION) -->
+    <!-- WORKS -->
     <section id="works">
         <!-- Background Image moved from Hero -->
         <div class="portfolio-bg-image"></div>
@@ -219,78 +170,30 @@
         </div>
     </section>
 
-    <!-- SOLUTIONS SECTION -->
-    <section id="solutions">
+    <!-- STORY (PHILOSOPHY) - Renamed from #portfolio -->
+    <section id="story">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">SOLUTIONS</span>
-                <h2 class="section-title">解決方案</h2>
-                <p class="section-subtitle">針對預售案與競圖需求，提供最具競爭力的速度與品質。</p>
-            </div>
-
-            <div class="pricing-grid">
-                <!-- Solution 1: Validations -->
-                <div class="pricing-card">
-                    <h3 class="pricing-title">概念驗證 (POC)</h3>
-                    <div class="pricing-cost">
-                        <span
-                            style="font-size: 20px; text-decoration: line-through; color: #666; margin-right: 5px;">NT$990</span>
-                        NT$590 <span class="per-unit">/ 張</span>
-                    </div>
-                    <div class="pricing-time">
-                        24 小時快速出圖
-                        <div style="font-size: 12px; color: #ffcc00; margin-top: 5px;">* 試營運優惠 Beta</div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>適合：前期提案、風格定調</li>
-                        <li>多種材質/氛圍快速替換</li>
-                        <li>純 AI 生成，無人工修圖</li>
-                    </ul>
-                    <a href="#contact" class="btn-secondary pricing-btn">選擇此方案</a>
-                </div>
-
-                <!-- Solution 2: Hybrid (Best Value) -->
-                <div class="pricing-card popular">
-                    <!-- <div class="service-icon-triangle"></div> -->
-                    <div class="popular-tag">MOST POPULAR</div>
-                    <h3 class="pricing-title">商業競圖 (Hybrid)</h3>
-                    <div class="pricing-cost">NT$2,490 <span class="per-unit">/ 張</span></div>
-                    <div class="pricing-time">3 - 5 天交付</div>
-                    <ul class="pricing-features">
-                        <li>適合：預售案、競圖報告</li>
-                        <li><strong>AI 構圖 + 人工精修</strong></li>
-                        <li>確保結構正確、不撞圖</li>
-                        <li>含 2 次免費修改</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary pricing-btn">立即開始</a>
-                </div>
-
-                <!-- Plan 3: Pure Human -->
-                <div class="pricing-card">
-                    <div class="service-icon-triangle"></div>
-                    <h3 class="pricing-title">純人工渲染</h3>
-                    <div class="pricing-cost">NT$3,990 <span class="per-unit">起</span></div>
-                    <div class="pricing-time">2 週以上</div>
-                    <ul class="pricing-features">
-                        <li>傳統最高標準</li>
-                        <li>精確控制所有細節</li>
-                        <li>國際競圖等級</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary pricing-btn">立即開始</a>
-                </div>
-            </div>
-
-            <!-- Legacy Pricing Table -->
-            <div class="pricing-footer">
-                <h4 class="footer-label">傳統服務參考價目</h4>
-                <div class="legacy-pricing-list">
-                    <div class="legacy-item"><span>建模 + 渲染</span> <span>NT$4,000 - 4,500 / 張</span></div>
-                    <div class="legacy-item"><span>純渲染</span> <span>NT$3,000 / 張</span></div>
-                    <div class="legacy-item"><span>動畫製作</span> <span>NT$500 / 秒</span></div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <span class="section-label"
+                    style="justify-content: center; display: flex; margin-bottom: 40px;">Philosophy</span>
+                <h2 style="font-size: 40px; line-height: 1.6; font-weight: 300; margin-bottom: 60px;">
+                    從壤土到呼吸
+                </h2>
+                <p style="font-size: 20px; line-height: 2; color: #ccc; margin-bottom: 40px;">
+                    我們是慶文與葳。LoamLab 土窟設計把每一個場域最原始、最粗糙的條件捕捉起來，像野人一樣翻轉它們，然後用 AI 與設計邏輯孕育出會呼吸、有記憶的空間視覺。
+                </p>
+                <p style="font-size: 20px; line-height: 2; color: #ccc;">
+                    那抹紅色，就是尚未成形的可能性。<br>
+                    我們不只是出圖，我們讓空間自己說話。
+                </p>
+                <div style="margin-top: 60px; color: var(--accent-color); font-size: 30px;">
+                    &Delta;
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- 3. 轉 (TRANSITION / LOGIC) -->
 
     <!-- AI SOLUTIONS SECTION -->
     <section id="ai-solutions">
@@ -386,6 +289,135 @@
         </div>
     </section>
 
+    <!-- PROCESS SECTION (Delivery) -->
+    <section id="process">
+        <div class="container">
+            <div class="section-header" style="text-align: center; padding-left: 0;">
+                <span class="section-label">THE PROCESS</span>
+                <h2 class="section-title">從構想到交付，僅需 3-5 天</h2>
+                <p class="section-subtitle" style="margin: 20px auto;">結合 AI 的速度與人類的細膩，重新定義渲染流程。</p>
+            </div>
+
+            <div class="process-steps">
+                <!-- Step 1 -->
+                <div class="process-card">
+                    <div class="step-icon">📂</div>
+                    <div class="step-meta">STEP 01</div>
+                    <h3 class="step-title">上傳資料</h3>
+                    <p class="step-desc">提供平面圖、SketchUp 模型或參考圖。</p>
+                </div>
+                <!-- Arrow -->
+                <div class="process-arrow">→</div>
+
+                <!-- Step 2 -->
+                <div class="process-card">
+                    <div class="step-icon">✍️</div>
+                    <div class="step-meta">KICKOFF</div>
+                    <h3 class="step-title">簽約啟動</h3>
+                    <p class="step-desc">回簽報價單並支付 60% 訂金，專案即刻啟動排程。</p>
+                </div>
+                <!-- Arrow -->
+                <div class="process-arrow">→</div>
+
+                <!-- Step 3 -->
+                <div class="process-card active-step">
+                    <div class="step-icon">🎨</div>
+                    <div class="step-meta">PRODUCTION</div>
+                    <h3 class="step-title">製作與修正</h3>
+                    <p class="step-desc">AI 快速初稿確認氛圍，再由人工精修材質、光影與細節。</p>
+                </div>
+                <!-- Arrow -->
+                <div class="process-arrow">→</div>
+
+                <!-- Step 4 -->
+                <div class="process-card">
+                    <div class="step-icon">☁️</div>
+                    <div class="step-meta">DELIVERY</div>
+                    <h3 class="step-title">完稿交付</h3>
+                    <p class="step-desc">支付尾款後，透過專屬雲端連結 (NAS) 下載高解析度圖檔。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS SECTION -->
+    <section id="solutions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">SOLUTIONS</span>
+                <h2 class="section-title">解決方案</h2>
+                <p class="section-subtitle">針對預售案與競圖需求，提供最具競爭力的速度與品質。</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Solution 1: Validations -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">概念驗證 (POC)</h3>
+                    <div class="pricing-cost">
+                        <span
+                            style="font-size: 20px; text-decoration: line-through; color: #666; margin-right: 5px;">NT$990</span>
+                        NT$590 <span class="per-unit">/ 張</span>
+                    </div>
+                    <div class="pricing-time">
+                        24 小時快速出圖
+                        <div style="font-size: 12px; color: #ffcc00; margin-top: 5px;">* 試營運優惠 Beta</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>適合：前期提案、風格定調</li>
+                        <li>多種材質/氛圍快速替換</li>
+                        <li>純 AI 生成，無人工修圖</li>
+                        <li style="color: #ffcc00;">需預付全額 (100% Upfront)</li>
+                    </ul>
+                    <a href="#contact" class="btn-secondary pricing-btn">選擇此方案</a>
+                </div>
+
+                <!-- Solution 2: Hybrid (Best Value) -->
+                <div class="pricing-card popular">
+                    <!-- <div class="service-icon-triangle"></div> -->
+                    <div class="popular-tag">MOST POPULAR</div>
+                    <h3 class="pricing-title">商業競圖 (Hybrid)</h3>
+                    <div class="pricing-cost">NT$2,490 <span class="per-unit">/ 張</span></div>
+                    <div class="pricing-time">3 - 5 天交付</div>
+                    <ul class="pricing-features">
+                        <li>適合：預售案、競圖報告</li>
+                        <li><strong>AI 構圖 + 人工精修</strong></li>
+                        <li>確保結構正確、不撞圖</li>
+                        <li>含 2 次免費修改</li>
+                        <li>首付 60% 啟動</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary pricing-btn">立即開始</a>
+                </div>
+
+                <!-- Plan 3: Pure Human -->
+                <div class="pricing-card">
+                    <div class="service-icon-triangle"></div>
+                    <h3 class="pricing-title">純人工渲染</h3>
+                    <div class="pricing-cost">NT$3,990 <span class="per-unit">起</span></div>
+                    <div class="pricing-time">2 週以上</div>
+                    <ul class="pricing-features">
+                        <li>傳統最高標準</li>
+                        <li>精確控制所有細節</li>
+                        <li>國際競圖等級</li>
+                        <li>分階段付款 (60% / 40%)</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary pricing-btn">立即開始</a>
+                </div>
+            </div>
+
+            <!-- Legacy Pricing Table -->
+            <div class="pricing-footer">
+                <h4 class="footer-label">傳統服務參考價目</h4>
+                <div class="legacy-pricing-list">
+                    <div class="legacy-item"><span>建模 + 渲染</span> <span>NT$4,000 - 4,500 / 張</span></div>
+                    <div class="legacy-item"><span>純渲染</span> <span>NT$3,000 / 張</span></div>
+                    <div class="legacy-item"><span>動畫製作</span> <span>NT$500 / 秒</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 合 (CONCLUSION) -->
+
     <!-- EDUCATION SECTION -->
     <section id="education" style="background: linear-gradient(to bottom, #000, #050505);">
         <div class="container">
@@ -421,29 +453,6 @@
                         <div class="line l1"></div>
                         <div class="line l2"></div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <span class="section-label"
-                    style="justify-content: center; display: flex; margin-bottom: 40px;">Philosophy</span>
-                <h2 style="font-size: 40px; line-height: 1.6; font-weight: 300; margin-bottom: 60px;">
-                    從壤土到呼吸
-                </h2>
-                <p style="font-size: 20px; line-height: 2; color: #ccc; margin-bottom: 40px;">
-                    我們是慶文與葳。LoamLab 把每一個場域最原始、最粗糙的條件捕捉起來，像野人一樣翻轉它們，然後用 AI 與設計邏輯孕育出會呼吸、有記憶的空間視覺。
-                </p>
-                <p style="font-size: 20px; line-height: 2; color: #ccc;">
-                    那抹紅色，就是尚未成形的可能性。<br>
-                    我們不只是出圖，我們讓空間自己說話。
-                </p>
-                <div style="margin-top: 60px; color: var(--accent-color); font-size: 30px;">
-                    &Delta;
                 </div>
             </div>
         </div>
