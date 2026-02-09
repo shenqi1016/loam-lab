@@ -171,186 +171,56 @@
     /* Hide old overlay if present */
 }
 
-/* HERO LOGO COMPOSITION (CSS ANIMATED) */
+/* HERO LOGO COMPOSITION (IMAGE) */
 .hero-logo-composition {
     position: absolute;
     top: 40%;
-    /* Optical Center */
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
     text-align: center;
-    /* Entrance Animation */
-    opacity: 0;
-    animation: logo-enter 1.5s ease-out forwards 0.2s;
 }
 
-@keyframes logo-enter {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -40%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
-}
-
-.logo-symbol {
+.logo-scan-container {
     position: relative;
-    width: 120px;
-    height: 100px;
-    margin: 0 auto 20px;
+    overflow: hidden;
+    /* Initial State: Hidden by clip-path or height */
+    clip-path: inset(100% 0 0 0);
+    /* Hidden from bottom */
+    animation: scan-reveal 2s cubic-bezier(0.19, 1, 0.22, 1) forwards 0.5s;
 }
 
-/* Common Triangle Style */
-.tri-left,
-.tri-right {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-left: 35px solid transparent;
-    border-right: 35px solid transparent;
-    border-bottom: 90px solid #fff;
-    /* Main Shape */
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+.logo-image-official {
+    width: 250px;
+    /* Adjust size to match official proportions */
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.2));
+    /* Slight red glow to integrate */
 }
 
-/* Hollow Cutout using ::after */
-.tri-left::after,
-.tri-right::after {
-    content: '';
-    position: absolute;
-    top: 6px;
-    /* Thickness */
-    left: -30px;
-    width: 0;
-    height: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-bottom: 80px solid #000;
-    /* Match BG */
-}
-
-.tri-left {
-    left: 10px;
-    z-index: 1;
-    animation: slide-in-left 1s ease-out backwards;
-}
-
-.tri-right {
-    left: 45px;
-    /* Overlap */
-    z-index: 2;
-    animation: slide-in-right 1s ease-out backwards 0.2s;
-}
-
-.tri-red {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 30px solid #cc0000;
-    z-index: 3;
-    /* Heartbeat */
-    animation: bloom-red 2s infinite alternate ease-in-out;
-    filter: drop-shadow(0 0 15px #ff0000);
-}
-
-.tri-base {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    transform-origin: center;
-    animation: scale-x-in 1s ease-out backwards 0.5s;
-}
-
-.logo-type {
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin-top: 15px;
-}
-
-.type-cn {
-    font-size: 24px;
-    font-weight: 300;
-    margin-bottom: 5px;
-    letter-spacing: 12px;
-    /* Wide spacing */
-    font-family: 'Noto Serif TC', serif;
-    /* Elegant Serif */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.type-en {
-    font-size: 14px;
-    color: #aaa;
-    letter-spacing: 8px;
-    font-weight: 300;
-}
-
-/* Logo specific animations */
-@keyframes slide-in-left {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slide-in-right {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes bloom-red {
+@keyframes scan-reveal {
     0% {
-        transform: translateX(-50%) scale(1);
-        filter: drop-shadow(0 0 5px #990000);
+        clip-path: inset(100% 0 0 0);
+        filter: grayscale(1) brightness(2);
+    }
+
+    50% {
+        filter: grayscale(0) brightness(1.5);
     }
 
     100% {
-        transform: translateX(-50%) scale(1.2);
-        filter: drop-shadow(0 0 20px #ff0000);
-    }
-}
-
-@keyframes scale-x-in {
-    from {
-        transform: scaleX(0);
-    }
-
-    to {
-        transform: scaleX(1);
+        clip-path: inset(0 0 0 0);
+        filter: grayscale(0) brightness(1);
     }
 }
 
 /* Adjust text below logo to clear */
 .hero-content {
     margin-top: 250px;
-    /* Push content down below logo */
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    mix-blend-mode: normal;
 }
 
 /* IMPLOSION NAV CSS */
