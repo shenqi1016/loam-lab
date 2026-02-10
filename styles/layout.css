@@ -694,6 +694,7 @@ section {
     color: #888;
 }
 
+/* --- MOBILE RESPONSIVENESS (Hero Redesign v2) --- */
 @media (max-width: 768px) {
     .pricing-grid {
         grid-template-columns: 1fr;
@@ -702,7 +703,42 @@ section {
     .legacy-pricing-list {
         flex-direction: column;
     }
+
+    .hero-headline {
+        font-size: 48px;
+        /* Scale down from 80px */
+        line-height: 1.2;
+        padding: 0 20px;
+    }
+
+    .hero-sub {
+        font-size: 18px;
+        padding: 0 20px;
+        margin-bottom: 40px;
+    }
+
+    .hero-logo-composition {
+        margin-bottom: 20px;
+    }
+
+    .logo-image-official {
+        width: 140px;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 18px 0;
+    }
 }
+
 
 /* --- AI SOLUTIONS SECTION (BENTO GRID) --- */
 .bento-grid {
