@@ -14,9 +14,8 @@ const PLANS = {
 };
 
 const ADDONS = {
-    'rush': { name: '24h 急件處理', price: 1500 },
-    'model': { name: 'SketchUp 建模服務', price: 2000 },
-    'source': { name: '購買原始檔 (Source)', price: 3000 }
+    'rush': { name: '24h 急件處理', price: 0.5, type: 'percent', label: '+50% 費用' },
+    'model': { name: 'SketchUp 建模服務', price: 20000, type: 'fixed', label: '+NT$20,000 起' }
 };
 
 // --- GLOBAL HELPER FUNCTIONS (Exposed to Window) ---
@@ -26,10 +25,19 @@ window.formatCurrency = (num) => {
 };
 
 window.calculateTotal = () => {
-    const base = PLANS[calcState.planKey].price * calcState.qty;
-    let addonTotal = 0;
-    calcState.selectedAddons.forEach(key => addonTotal += ADDONS[key].price);
-    return base + addonTotal;
+    let total = PLANS[calcState.planKey].price * calcState.qty;
+
+    // 1. Add Fixed Add-ons
+    if (calcState.selectedAddons.has('model')) {
+        total += ADDONS['model'].price;
+    }
+
+    // 2. Apply Percentage Add-ons (Calc based on current total)
+    if (calcState.selectedAddons.has('rush')) {
+        total = Math.round(total * (1 + ADDONS['rush'].price));
+    }
+
+    return total;
 };
 
 // Step 1: Configuration UI
@@ -60,21 +68,16 @@ window.renderStep1 = () => {
                 </div>
 
                 <!-- Add-ons -->
-                <div class="calc-group">
-                    <label>加值服務</label>
-                    <div class="addon-list">
                         ${Object.keys(ADDONS).map(key => `
                             <div class="addon-item ${calcState.selectedAddons.has(key) ? 'selected' : ''}" 
                                  onclick="toggleAddon('${key}')">
                                 <div class="addon-info">
                                     <span class="addon-name">${ADDONS[key].name}</span>
-                                    <span class="addon-price">+NT$${ADDONS[key].price}</span>
+                                    <span class="addon-price">${ADDONS[key].label}</span>
                                 </div>
                                 <div class="addon-check"></div>
                             </div>
                         `).join('')}
-                    </div>
-                </div>
             </div>
 
             <div class="calc-footer">
@@ -98,7 +101,15 @@ window.renderStep2 = () => {
 
     let addonHtml = '';
     calcState.selectedAddons.forEach(key => {
-        addonHtml += `<div class="invoice-row"><span>${ADDONS[key].name}</span><span>NT$${ADDONS[key].price}</span></div>`;
+        const item = ADDONS[key];
+        // For Step 2, we want to show the actual calculated cost if possible, or just the label
+        // But for simplicity and clarity of calculation logic:
+        // Let's show the label for percent, and formatted price for fixed.
+        let valDisplay = item.label;
+        if (item.type === 'fixed') {
+            valDisplay = 'NT$' + item.price.toLocaleString();
+        }
+        addonHtml += `<div class="invoice-row"><span>${item.name}</span><span>${valDisplay}</span></div>`;
     });
 
     modalOverlay.innerHTML = `

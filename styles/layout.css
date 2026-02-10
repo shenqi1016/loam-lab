@@ -63,7 +63,8 @@
     transition: width 0.3s var(--ease-out);
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
 }
 
@@ -78,7 +79,7 @@
     align-items: center;
     overflow: hidden;
     /* Immersive Background */
-    background-image: url('../images/hero_bg_render.jpg');
+    background-image: url('../images/hero_bg_minimal.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -94,10 +95,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65);
-    /* Darker for accessibility */
-    backdrop-filter: blur(2px);
-    /* Slight blur to focus on content */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 80%);
+    /* Gradient for text readability */
+    backdrop-filter: blur(0px);
     z-index: 1;
 }
 
@@ -198,7 +198,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     z-index: 10;
     /* Ensure visibility even if animation fails */
     opacity: 0;
@@ -225,37 +225,52 @@
 }
 
 .logo-image-official {
-    width: 240px;
+    width: 180px;
+    /* Smaller Logo */
     height: auto;
     opacity: 0;
     pointer-events: none;
 }
 
 /* TEXT STYLES */
+.hero-trust-badge {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slide-up-fade 1s var(--ease-out) forwards 0.1s;
+    font-weight: 500;
+}
+
 .hero-headline {
-    font-size: 72px;
+    font-size: 80px;
     /* Giant */
-    font-weight: 800;
-    line-height: 1.2;
+    font-weight: 900;
+    line-height: 1.1;
     letter-spacing: -2px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     opacity: 0;
     transform: translateY(30px);
     animation: slide-up-fade 1s var(--ease-out) forwards 0.3s;
     color: #fff;
-    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     white-space: nowrap;
 }
 
 .hero-sub {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.6;
-    color: #ddd;
-    font-weight: 300;
-    margin-bottom: 50px;
+    color: #f0f0f0;
+    font-weight: 400;
+    margin-bottom: 60px;
     opacity: 0;
     animation: slide-up-fade 1s var(--ease-out) forwards 0.6s;
     text-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-triangle {
@@ -328,7 +343,7 @@ body.body-suck-in {
 
 .hero-ctas {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     opacity: 0;
     animation: fade-in 1.5s ease forwards 1.2s;
@@ -336,11 +351,11 @@ body.body-suck-in {
 
 .btn-primary,
 .btn-secondary {
-    padding: 18px 40px;
+    padding: 20px 50px;
     /* Larger buttons */
-    border-radius: 40px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: 700;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s var(--ease-out);
@@ -350,28 +365,29 @@ body.body-suck-in {
 }
 
 .btn-primary {
-    background: var(--accent-color);
+    background: #ff0000;
     /* Red Background */
     color: #fff;
-    border: 1px solid var(--accent-color);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    border: none;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
 }
 
 .btn-primary:hover {
     background: #cc0000;
     transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+    box-shadow: 0 10px 50px rgba(255, 0, 0, 0.7);
 }
 
 .btn-secondary {
     background: transparent;
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .btn-secondary:hover {
     border-color: #fff;
     background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 /* ANIMATIONS */
@@ -442,6 +458,7 @@ section {
     letter-spacing: -2px;
     line-height: 1.1;
 }
+
 
 /* --- SYSTEM UTILITIES (For Future Integration) --- */
 /* Use these to create new sections that match the design system */
@@ -789,13 +806,84 @@ section {
     justify-content: space-between;
 }
 
-/* --- PROCESS SECTION --- */
+/* --- PROCESS SECTION (Hidden/Legacy? Keeping for safety) --- */
 .process-steps {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
     margin-top: 60px;
+}
+
+.process-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* --- MOBILE OPTIMIZATION (Responsive Sync) --- */
+@media (max-width: 768px) {
+
+    /* Hero Adjustments */
+    .hero-logo-composition {
+        margin-top: -20px;
+    }
+
+    .logo-image-official {
+        width: 160px;
+        /* Smaller Logo */
+    }
+
+    .hero-headline {
+        font-size: 42px;
+        /* Readable Title */
+        margin-bottom: 15px;
+    }
+
+    .hero-sub {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    /* 3-Phase Grid Stacking */
+    .phase-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .phase-col {
+        gap: 15px;
+    }
+
+    .phase-header {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .phase-num {
+        display: block;
+        /* Show but smaller */
+        font-size: 40px;
+        margin-bottom: -10px;
+        opacity: 0.3;
+    }
+
+    .phase-title {
+        font-size: 20px;
+    }
+
+    /* Bento Cards Mobile */
+    .bento-card {
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .process-steps {
+        flex-direction: column;
+    }
 }
 
 .process-steps {
@@ -896,27 +984,27 @@ section {
         width: 100%;
         max-width: 400px;
     }
-}
 
-.hero-headline {
-    font-size: 60px;
-    letter-spacing: -2px;
-}
+    /* Hero Responsive */
+    .hero-headline {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
 
-.hero-sub {
-    font-size: 16px;
-    letter-spacing: 2px;
-}
+    .hero-sub {
+        font-size: 16px;
+        padding: 0 20px;
+    }
 
-.nav-content {
-    padding: 0 20px;
-}
+    .nav-content {
+        padding: 0 20px;
+    }
 
-.section-header {
-    padding-left: 20px;
-}
+    .section-header {
+        padding-left: 20px;
+    }
 
-.section-title {
-    font-size: 40px;
-}
+    .section-title {
+        font-size: 36px;
+    }
 }

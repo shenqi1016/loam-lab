@@ -24,105 +24,90 @@
             <div class="nav-links">
                 <a href="work.html" class="nav-item">WORKS</a>
                 <a href="solutions.html" class="nav-item">SOLUTIONS</a>
-                <a href="about.html" class="nav-item">STORY</a>
+                <a href="about.html" class="nav-item active">STORY</a>
                 <a href="contact.html" class="nav-item">CONTACT</a>
             </div>
         </div>
     </nav>
 
     <!-- 1. 起 (INTRO) -->
-    <!-- HERO SECTION (First Impression) -->
-    <section class="hero" id="hero">
-        <!-- 1. Background Overlay (CSS handled) -->
-
-        <!-- 2. LOGO (Centered Top) -->
-        <div class="hero-logo-composition">
-            <div class="logo-dynamic-wrapper">
-                <div class="logo-glow"></div>
-                <!-- Reuse logo image but styled smaller via CSS -->
-                <img src="images/logo_transparent.png" alt="LoamLab Official Logo" class="logo-image-official">
-            </div>
-        </div>
-
-        <!-- 3. Typography & Trust -->
-        <div class="hero-content">
-            <div class="hero-trust-badge">專攻建商與設計事務所</div>
-
-            <h1 class="hero-headline">
-                高質空間渲染外包
-                <div class="cta-triangle"
-                    style="border-bottom-color: #ff0000; animation: organic-breath 2s infinite alternate;"></div>
-            </h1>
-
-            <p class="hero-sub">
-                3-5 天出圖，私有 AI + 人工把關<br>
-                不撞圖、高端寫實，讓預售案更好賣
-            </p>
-
-            <div class="hero-ctas">
-                <a href="#contact" class="btn-primary">
-                    免費試做你的基地渲染
-                </a>
-                <a href="#works" class="btn-secondary">
-                    看轉化案例
-                </a>
-            </div>
+    <!-- PAGE HEADER -->
+    <section class="page-header" style="padding: 160px 0 80px; text-align: center; background: #000;">
+        <div class="container">
+            <h1 class="hero-headline" style="font-size: 52px; margin-bottom: 20px;">The Studio</h1>
+            <p class="hero-sub" style="font-size: 18px; color: #888;">Philosophy & Team</p>
         </div>
     </section>
-
 
     <!-- 2. 承 (ELUCIDATION) -->
     <!-- WORKS -->
-    <section id="works">
-        <!-- Background Image moved from Hero -->
-        <div class="portfolio-bg-image"></div>
-        <div class="portfolio-overlay"></div>
 
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="section-header">
-                <span class="section-label">Selected Projects</span>
-                <h2 class="section-title">捕捉的瞬間</h2>
-            </div>
-            <!-- Grid container will be injected via JS or CSS later -->
-            <div class="portfolio-grid" id="portfolio-grid-container">
-                <!-- IG Post 1 -->
-                <div class="portfolio-card"
-                    onclick="window.open('https://www.instagram.com/loamlab_barbarian', '_blank')">
-                    <img src="images/hero_bg_render.jpg" alt="Project 1">
-                    <div class="card-overlay">
-                        <div class="card-category">Taipei • Residential</div>
-                        <h3 class="card-title">Silence in Chaos</h3>
-                        <div style="margin-top: 10px; font-size: 12px; color: #aaa;">#concrete #loamlab</div>
-                    </div>
+    <!-- STORY (PHILOSOPHY) - Renamed from #portfolio -->
+    <section id="story">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <span class="section-label"
+                    style="justify-content: center; display: flex; margin-bottom: 40px;">Philosophy</span>
+                <h2 style="font-size: 40px; line-height: 1.6; font-weight: 300; margin-bottom: 60px;">
+                    從壤土到呼吸
+                </h2>
+                <p style="font-size: 20px; line-height: 2; color: #ccc; margin-bottom: 40px;">
+                    我們是慶文與葳。LoamLab 土窟設計把每一個場域最原始、最粗糙的條件捕捉起來，像野人一樣翻轉它們，然後用 AI 與設計邏輯孕育出會呼吸、有記憶的空間視覺。
+                </p>
+                <p style="font-size: 20px; line-height: 2; color: #ccc;">
+                    那抹紅色，就是尚未成形的可能性。<br>
+                    我們不只是出圖，我們讓空間自己說話。
+                </p>
+                <div style="margin-top: 60px; color: var(--accent-color); font-size: 30px;">
+                    &Delta;
                 </div>
-
-                <!-- IG Post 2 -->
-                <div class="portfolio-card"
-                    onclick="window.open('https://www.instagram.com/loamlab_barbarian', '_blank')">
-                    <img src="images/hero_bg_render.jpg" alt="Project 2">
-                    <div class="card-overlay">
-                        <div class="card-category">Taichung • Commercial</div>
-                        <h3 class="card-title">The Red Void</h3>
-                        <div style="margin-top: 10px; font-size: 12px; color: #aaa;">#architecture #red</div>
-                    </div>
-                </div>
-
-                <!-- IG Post 3 -->
-                <div class="portfolio-card"
-                    onclick="window.open('https://www.instagram.com/loamlab_barbarian', '_blank')">
-                    <img src="images/hero_bg_render.jpg" alt="Project 3">
-                    <div class="card-overlay">
-                        <div class="card-category">Tainan • Public</div>
-                        <h3 class="card-title">Shadow Play</h3>
-                        <div style="margin-top: 10px; font-size: 12px; color: #aaa;">#light #shadow</div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
+    <!-- 3. 轉 (TRANSITION / LOGIC) -->
+
     <!-- 4. 合 (CONCLUSION) -->
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" style="background: linear-gradient(to bottom, #000, #050505);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">ACADEMY</span>
+                <h2 class="section-title">專業傳承</h2>
+                <p class="section-subtitle">將我們十年的實戰經驗，濃縮成一套高效的工作流。</p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-badge">COMING SOON</div>
+                <div class="course-content">
+                    <h3 class="course-title">Revit 參數化建模工作流</h3>
+                    <p class="course-desc">
+                        打破傳統建模的僵化思維。學習如何結合 Dynamo 與 AI，建立可變動、高效率的參數化模型系統。<br>
+                        適合想突破瓶頸的建築師與室內設計師。
+                    </p>
+                    <ul class="course-features">
+                        <li>🔷 Revit 參數化邏輯解析</li>
+                        <li>🔷 Dynamo 基礎自動化</li>
+                        <li>🔷 AI 輔助建模應用</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="margin-top: 30px;">
+                        加入候補名單 Waitlist
+                    </a>
+                </div>
+                <div class="course-visual">
+                    <!-- CSS Art for Revit/Node structure -->
+                    <div class="node-network">
+                        <div class="node n1"></div>
+                        <div class="node n2"></div>
+                        <div class="node n3"></div>
+                        <div class="line l1"></div>
+                        <div class="line l2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ABOUT + CONTACT -->
     <section id="contact" style="background: #0a0a0a;">
