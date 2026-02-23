@@ -260,8 +260,7 @@
 }
 
 .hero-headline {
-    font-size: 80px;
-    /* Giant */
+    font-size: var(--fs-display);
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -2px;
@@ -275,7 +274,7 @@
 }
 
 .hero-sub {
-    font-size: 24px;
+    font-size: var(--fs-h3);
     line-height: 1.6;
     color: #f0f0f0;
     font-weight: 400;
@@ -448,13 +447,13 @@ body.body-suck-in {
 
 /* SECTION STYLES */
 section {
-    padding: 160px 0;
+    padding: var(--space-section) 0;
     position: relative;
     border-bottom: 1px solid #111;
 }
 
 .section-header {
-    margin-bottom: 100px;
+    margin-bottom: var(--space-element);
     padding-left: 5%;
 }
 
@@ -468,7 +467,7 @@ section {
 }
 
 .section-title {
-    font-size: 60px;
+    font-size: var(--fs-h2);
     font-weight: 700;
     letter-spacing: -2px;
     line-height: 1.1;
@@ -507,7 +506,7 @@ section {
 }
 
 .feature-title {
-    font-size: 20px;
+    font-size: var(--fs-h3);
     color: #fff;
     margin-bottom: 10px;
 }
@@ -554,7 +553,7 @@ section {
 }
 
 .service-title {
-    font-size: 24px;
+    font-size: var(--fs-h3);
     font-weight: 700;
     margin-bottom: 10px;
     color: #fff;
@@ -585,7 +584,7 @@ section {
 
 /* --- PRICING SECTION --- */
 .section-subtitle {
-    font-size: 18px;
+    font-size: var(--fs-p);
     color: var(--text-secondary);
     margin-top: 10px;
     font-weight: 300;
@@ -617,7 +616,7 @@ section {
 }
 
 .pricing-enterprise h3 {
-    font-size: 20px;
+    font-size: var(--fs-h3);
     color: #fff;
     margin-bottom: 5px;
 }
@@ -1185,4 +1184,51 @@ section {
         grid-template-columns: 1fr;
         /* 1 col on small mobile */
     }
+}
+
+/* --- UNIFIED PAGE HEADER --- */
+.page-header {
+    position: relative;
+    padding: var(--space-section) 0;
+    text-align: center;
+    background-image: url('../images/hero_bg_wide.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    /* Support smooth pan */
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+/* Dark Overlay */
+.page-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+    z-index: 1;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header .hero-headline {
+    font-size: var(--fs-h1);
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+    color: #fff;
+}
+
+.page-header .hero-sub {
+    font-size: var(--fs-p);
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
 }
